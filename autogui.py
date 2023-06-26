@@ -60,7 +60,7 @@ def fnWhile():
 
         fnScreen()
 
-        time.sleep(random.randrange(1, 10) * 1)
+        time.sleep(random.randrange(1, 10) * 60)
 
 
 #########################################
