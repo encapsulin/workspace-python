@@ -33,8 +33,10 @@ def fnShowCoords(i):
 
 
 def fnClickRefresh():
-    pg.moveTo(170,102, duration = 1)
-    pg.click(170,102)
+    # pg.moveTo(140, 80, duration = 1)
+    # pg.click(140, 80)
+    pg.moveTo(140, 80, duration = 1)
+    pg.click(140, 80)
     
 
 def fnScreen():
@@ -56,7 +58,7 @@ while True:
     fnClickRefresh()
     time.sleep(5)
     fnScreen()
-    time.sleep(random.randrange(1,10) * 1 )
+    time.sleep(random.randrange(1,10) * 60 )
 
 print("stop")
 
