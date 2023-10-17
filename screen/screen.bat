@@ -1,3 +1,3 @@
-:x
+Rem :x
 python screen.py
-goto x
+Rem goto x

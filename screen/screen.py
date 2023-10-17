@@ -1,7 +1,24 @@
+# pip install pyautogui
+# pip install Pillow
+# pip install pyscreeze
+
 import pyautogui
 import time
+import datetime
+import os
 
-myScreenshot = pyautogui.screenshot()
-myScreenshot.save(r'./screen.png')
+def fnScreen():
+    myDate = datetime.datetime.now().strftime("%Y-%m-%d")
+    if not os.path.exists(myDate):
+        os.makedirs(myDate)
 
-time.sleep(5)
+    myTime = datetime.datetime.now().strftime("%H-%M-%S")
+
+    myScreenshot = pyautogui.screenshot()
+    myFile = r'./' + myDate + '/' + myTime + '.png'
+    print(myFile,flush=True)
+    myScreenshot.save(myFile)
+
+while True:
+    fnScreen()
+    time.sleep(5)
