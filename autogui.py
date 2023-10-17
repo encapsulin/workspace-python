@@ -33,34 +33,40 @@ def fnShowCoords(i):
         time.sleep(1)
 
 
-def fnClick(x, y, duration_):
+def fnClick2(x, y, duration_):
     print(duration_, flush=True)
     pg.moveTo(x, y, duration=duration_)
     pg.click(x, y)
 
+def fnClick(x, y, duration_):
+    print(duration_, flush=True)
+    pg.moveTo(x, y, duration=duration_)
+    pg.click()
 
 def fnScreen():
     # screen = pg.screenshot("/tmp/adsf.png")
-    # screen = pg.screenshot()
-    # fn = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-    # fn = "./"+fn+".png"
-    # print(fn, flush=True)
-    # screen.save(fn)
+    screen = pg.screenshot()
+    fn = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    fn = "./"+fn+".png"
+    print(fn, flush=True)
+    screen.save(fn)
+
+def fnScreen2():
+    time.sleep(1)
     pg.hotkey('ctrl', 'shift', 'p') 
     time.sleep(1)
     pg.typewrite('full size screen') 
     time.sleep(1)
     pg.hotkey('enter') 
-    time.sleep(1)
 
 def fnWhile():
     while True:
-        fnClick(160, 80, 3)  # refresh
-        # fnClick(1855, 115, 2)  # 3 dots 
-
         fnScreen()
-
-        time.sleep(random.randrange(1, 10) * 60)
+        pg.moveTo(140, 80, 1)
+        pg.click()
+        time.sleep(random.randrange(10, 30) * 30)
+        pg.moveTo(10, 10, 1)
+ 
 
 
 #########################################
